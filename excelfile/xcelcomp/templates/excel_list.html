@@ -1,0 +1,25 @@
+{% block content %}
+<h2>Excel</h2>
+<table class="table">
+  <p>
+    <a href="{% url 'upload_book' %}">Updated excel</a>
+  </p>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Download</th>
+      <th>Download</th>
+      <th>Download</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cell in cells %}
+    <tr>
+      <td>{{ cell.title }}</td>
+      <td><a href="{{ cell.excel.url }}" target="_blank">Download file</a></td>
+      <td>></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
